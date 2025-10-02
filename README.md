@@ -1,4 +1,4 @@
-Resumo
+#Relatório reunião 02/10/2025
 
 ### Conceito e História do Jogo
 
