@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlhgkskkj4hst"]
+
+[ext_resource type="FontFile" uid="uid://cgbgrhu661ghy" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_axxjw"]
+[ext_resource type="FontFile" uid="uid://44dh0tdthaie" path="res://assets/fonts/PixelOperator8.ttf" id="1_f76k3"]
+[ext_resource type="Script" uid="uid://d1mrc8e2uc8r0" path="res://script/guia.gd" id="1_gob10"]
+[ext_resource type="Texture2D" uid="uid://s1bw417yiv8s" path="res://assets/sprites/Outros/botoes/normal/seta_normal.png" id="3_pp6oi"]
+[ext_resource type="Texture2D" uid="uid://b35ll4lqv5gfg" path="res://assets/sprites/Outros/botoes/hover/seta_hover.png" id="4_gob10"]
+
+[node name="guia" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gob10")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(51.5044, 26.7717)
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 24.0
+offset_right = 1175.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("1_axxjw")
+theme_override_font_sizes/font_size = 64
+text = "GUIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 224.0
+offset_right = 985.0
+offset_bottom = 253.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 28
+text = "Andar para esquerda"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 267.0
+offset_right = 985.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 28
+text = "Andar para direita"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 313.0
+offset_right = 985.0
+offset_bottom = 342.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 28
+text = "Andar para cima"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 357.0
+offset_right = 985.0
+offset_bottom = 386.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 28
+text = "Andar para baixo"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 397.0
+offset_right = 985.0
+offset_bottom = 426.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 28
+text = "interagir com o ambiente"
+vertical_alignment = 1
+
+[node name="voltar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.46325, 1.46325)
+texture_normal = ExtResource("3_pp6oi")
+texture_hover = ExtResource("4_gob10")
+
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
