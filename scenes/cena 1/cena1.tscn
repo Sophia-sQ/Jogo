@@ -53,7 +53,6 @@ zoom = Vector2(4, 4)
 [node name="Asteroides" type="Node" parent="."]
 
 [node name="asteroide" parent="Asteroides" instance=ExtResource("2_85hpt")]
-visible = false
 position = Vector2(-172, -153)
 
 [node name="TileMap" type="TileMap" parent="."]
