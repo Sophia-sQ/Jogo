@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://das46kw3ui7qp"]
+
+[ext_resource type="Texture2D" uid="uid://dxofw783tld34" path="res://assets/sprites/Outros/spr_holder_guarda.png" id="1_dtn1i"]
+[ext_resource type="PackedScene" uid="uid://ddamy0804ovt5" path="res://scenes/cena 4/killzone.tscn" id="2_r1jb5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1jb5"]
+atlas = ExtResource("1_dtn1i")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d38ru"]
+atlas = ExtResource("1_dtn1i")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4njdh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1jb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d38ru")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1jb5"]
+size = Vector2(13, 22)
+
+[node name="guarda" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_4njdh")
+
+[node name="Killzone" parent="." instance=ExtResource("2_r1jb5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_r1jb5")
+
+[node name="Timer" type="Timer" parent="Killzone"]
+
+[connection signal="timeout" from="Killzone/Timer" to="Killzone" method="_on_timer_timeout"]
