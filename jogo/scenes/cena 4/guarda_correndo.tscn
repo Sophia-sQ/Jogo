@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://s34owx2bvfqi"]
+
+[ext_resource type="Script" uid="uid://bpw7oa685bh8i" path="res://script/guarda_correndo.gd" id="1_jjpm5"]
+[ext_resource type="Texture2D" uid="uid://dxofw783tld34" path="res://assets/sprites/Outros/spr_holder_guarda.png" id="2_bv6rb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fujuu"]
+atlas = ExtResource("2_bv6rb")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmavu"]
+atlas = ExtResource("2_bv6rb")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x3dnq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fujuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmavu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bv6rb"]
+size = Vector2(13.375, 227)
+
+[node name="guarda_correndo" type="CharacterBody2D"]
+script = ExtResource("1_jjpm5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -4)
+sprite_frames = SubResource("SpriteFrames_x3dnq")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.3125, -103.5)
+shape = SubResource("RectangleShape2D_bv6rb")
