@@ -12,27 +12,48 @@ func _ready() -> void:
 
 func _on_sinal_guarda():
 	timer_guarda.start()
-	V = 0.5
+	V = 0.9
+	
+	if position.x >= 3500 and position.x <=6999:
+			V = 1.05
+	
+	if position.x >= 7000 and position.x <=10499:
+			V = 1.2
+	
+	if position.x >= 10500 and position.x <= 13999:
+			V = 1.35
+	
+	if position.x >= 14000:
+			V = 1.4
 
 func _physics_process(delta: float) -> void:
 	position.x += V
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
-	
-	if position.x <= cam.position.x-144:
-		if plu.position.x <= cam.position.x:
-			V = 10 
-		else:
-			V = 100
 	 
 	move_and_slide()
 
 
 
 func _on_timer_guarda_timeout() -> void:
-	V = 3.3
+	V = 4
+	
+	if position.x >= -200 and position.x <= 3499:
+		V = 3.3
+
+	if position.x >= 3500 and position.x <=6999:
+		V = 3.35
+	
+	if position.x >= 7000 and position.x <=10499:
+		V = 3.45
+	
+	if position.x >= 10500 and position.x <= 13999:
+		V = 3.55
+	
+	if position.x >= 14000:
+		V = 3.65
+	
 
 
 func _on_plu_mrt_body_entered(body: Node2D) -> void:

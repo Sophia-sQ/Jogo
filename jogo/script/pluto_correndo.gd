@@ -36,3 +36,15 @@ func _physics_process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	SPEED = 3
+	
+	if position.x >= 3500 and position.x <=6999:
+		SPEED = 3.1
+	
+	if position.x >= 7000 and position.x <=10499:
+		SPEED = 3.2
+	
+	if position.x >= 10500 and position.x <= 13999:
+		SPEED = 3.3
+	
+	if position.x >= 14000:
+		SPEED = 3.4

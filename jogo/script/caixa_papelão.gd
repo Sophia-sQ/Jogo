@@ -12,10 +12,7 @@ func _on_body_entered(body: Node2D) -> void:
 		animated_sprite_2d.play("atrito")
 	if body == p:
 		Gerenciador.Sp.emit()
-		animated_sprite_2d.play("atrito")
-	else:
-		print("chao")
-		
+		animated_sprite_2d.play("atrito")  
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	queue_free()
