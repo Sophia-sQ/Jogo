@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=4 uid="uid://bmorsroabrpi1"]
 
 [ext_resource type="Texture2D" uid="uid://bcjabn586iayd" path="res://assets/sprites/Cenários/prateleira_teste.png" id="2_0ttr3"]
-[ext_resource type="Texture2D" uid="uid://dc6of5v06qbw5" path="res://assets/sprites/Cenários/Cenario_cena4.png" id="2_dgbvo"]
+[ext_resource type="Texture2D" uid="uid://dc6of5v06qbw5" path="res://assets/sprites/Cenários/Cenario_cena3.png" id="2_dgbvo"]
 [ext_resource type="Texture2D" uid="uid://b1xrbltmlmhs2" path="res://assets/sprites/Cenários/spr_janela.png" id="3_dgbvo"]
-[ext_resource type="PackedScene" uid="uid://s34owx2bvfqi" path="res://scenes/cena 4/guarda_correndo.tscn" id="4_0ttr3"]
-[ext_resource type="PackedScene" uid="uid://cbuiqip58yoc4" path="res://scenes/cena 4/pluto_correndo.tscn" id="4_m3wxb"]
-[ext_resource type="PackedScene" uid="uid://4637khfa6yxm" path="res://scenes/cena 4/caixa_papelão.tscn" id="5_m3wxb"]
+[ext_resource type="PackedScene" uid="uid://s34owx2bvfqi" path="res://scenes/cena 3/guarda_correndo.tscn" id="4_0ttr3"]
+[ext_resource type="PackedScene" uid="uid://cbuiqip58yoc4" path="res://scenes/cena 3/pluto_correndo.tscn" id="4_m3wxb"]
+[ext_resource type="PackedScene" uid="uid://4637khfa6yxm" path="res://scenes/cena 3/caixa_papelão.tscn" id="5_m3wxb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cluor"]
 texture = ExtResource("2_dgbvo")
