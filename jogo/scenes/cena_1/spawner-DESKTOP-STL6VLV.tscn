@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4fajmwabf8l5"]
+
+[ext_resource type="Script" uid="uid://uym5nuxfyjdl" path="res://script/spawner.gd" id="1_2vbf6"]
+[ext_resource type="Script" uid="uid://cwq17bhqqpgqb" path="res://script/geren_spawn.gd" id="2_ik2nu"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_2vbf6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="gerenciamento" type="Node2D" parent="."]
+script = ExtResource("2_ik2nu")
+
+[node name="Timer2" type="Timer" parent="gerenciamento"]
+wait_time = 60.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="gerenciamento/Timer2" to="gerenciamento" method="_on_timer_2_timeout"]

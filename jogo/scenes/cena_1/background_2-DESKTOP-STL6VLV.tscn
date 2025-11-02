@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://8pv7iq43lqsr"]
+
+[ext_resource type="Shader" uid="uid://b3ieup10vmcrr" path="res://Background.gdshader" id="1_aflov"]
+[ext_resource type="Texture2D" uid="uid://co12ln7dghtvu" path="res://assets/sprites/Outros/90 Sem Título_20250926170307 - Copia.png" id="2_djnyr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wkuh7"]
+shader = ExtResource("1_aflov")
+
+[node name="Background2" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_wkuh7")
+offset_right = 784.0
+offset_bottom = 360.0
+texture = ExtResource("2_djnyr")

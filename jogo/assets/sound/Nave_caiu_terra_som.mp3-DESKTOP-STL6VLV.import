@@ -1,0 +1,23 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+<<<<<<< HEAD
+uid="uid://bpi70hini4m0o"
+=======
+uid="uid://c64kdct4dl0rh"
+>>>>>>> fa1f77b30688538afe6cd13372852b57277e73ba
+path="res://.godot/imported/Nave_caiu_terra_som.mp3-29913d4b88c2cf8176ce16c0fd77b5e4.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/Nave_caiu_terra_som.mp3"
+dest_files=["res://.godot/imported/Nave_caiu_terra_som.mp3-29913d4b88c2cf8176ce16c0fd77b5e4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

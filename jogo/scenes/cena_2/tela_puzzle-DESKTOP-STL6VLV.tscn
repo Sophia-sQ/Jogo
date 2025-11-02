@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://d36xgqsxplel8"]
+
+[ext_resource type="Script" uid="uid://bg2fglexbqmdl" path="res://script/tela_puzzle.gd" id="1_85dpa"]
+[ext_resource type="Texture2D" uid="uid://bvu1l84yydg8c" path="res://assets/sprites/Outros/tela_jogo.png" id="1_wbllo"]
+[ext_resource type="FontFile" uid="uid://44dh0tdthaie" path="res://assets/fonts/PixelOperator8.ttf" id="3_ups85"]
+[ext_resource type="Texture2D" uid="uid://bv0so02unybdm" path="res://assets/sprites/Outros/botoes/normal/fechar__normal.png" id="5_yxl6x"]
+[ext_resource type="Texture2D" uid="uid://bgeqbpf13c6u" path="res://assets/sprites/Outros/botoes/clicado/fechar_clicado.png" id="6_ok13o"]
+[ext_resource type="Texture2D" uid="uid://0mpjbpptil77" path="res://assets/sprites/Outros/botoes/hover/fechar_hover.png" id="7_gcka0"]
+
+[node name="Tela_puzzle" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 455.0
+offset_top = 37.0
+offset_right = 455.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_85dpa")
+resposta = "c"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-24.9999, 145)
+scale = Vector2(1.17049, 1.17049)
+texture = ExtResource("1_wbllo")
+
+[node name="pergunta" type="Label" parent="Sprite2D"]
+offset_left = -111.0
+offset_top = -90.0
+offset_right = 111.0
+offset_bottom = -29.0
+theme_override_fonts/font = ExtResource("3_ups85")
+theme_override_font_sizes/font_size = 8
+text = "Essa é a pergunta para o puzzle"
+autowrap_mode = 3
+
+[node name="a" type="Button" parent="Sprite2D"]
+offset_left = -113.0
+offset_top = -27.0
+offset_right = 113.0
+offset_bottom = -11.0
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.990985, 1, 0.815232, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_ups85")
+theme_override_font_sizes/font_size = 8
+text = "a. resposta a"
+flat = true
+alignment = 0
+autowrap_mode = 2
+
+[node name="b" type="Button" parent="Sprite2D"]
+offset_left = -113.0
+offset_top = 6.62891
+offset_right = 113.0
+offset_bottom = 22.6289
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.990985, 1, 0.815232, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_ups85")
+theme_override_font_sizes/font_size = 8
+text = "a. resposta a"
+flat = true
+alignment = 0
+autowrap_mode = 2
+
+[node name="c" type="Button" parent="Sprite2D"]
+offset_left = -113.0
+offset_top = 40.2578
+offset_right = 113.0
+offset_bottom = 56.2578
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.990985, 1, 0.815232, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_ups85")
+theme_override_font_sizes/font_size = 8
+text = "a. resposta a"
+flat = true
+alignment = 0
+autowrap_mode = 2
+
+[node name="fechar" type="TextureButton" parent="Sprite2D"]
+offset_left = 83.2315
+offset_top = 80.7093
+offset_right = 115.231
+offset_bottom = 112.709
+texture_normal = ExtResource("5_yxl6x")
+texture_pressed = ExtResource("6_ok13o")
+texture_hover = ExtResource("7_gcka0")
+stretch_mode = 4
+
+[connection signal="pressed" from="Sprite2D/a" to="." method="_on_a_pressed"]
+[connection signal="pressed" from="Sprite2D/b" to="." method="_on_b_pressed"]
+[connection signal="pressed" from="Sprite2D/c" to="." method="_on_c_pressed"]
+[connection signal="pressed" from="Sprite2D/fechar" to="." method="_on_fechar_pressed"]

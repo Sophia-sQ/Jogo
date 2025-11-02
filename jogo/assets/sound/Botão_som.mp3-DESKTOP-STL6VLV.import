@@ -1,0 +1,23 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+<<<<<<< HEAD
+uid="uid://bqnme3m5l8q7f"
+=======
+uid="uid://te7v4i22lts3"
+>>>>>>> fa1f77b30688538afe6cd13372852b57277e73ba
+path="res://.godot/imported/Botão_som.mp3-8b3cd37b6e464e201e5aedb4c8506c69.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/Botão_som.mp3"
+dest_files=["res://.godot/imported/Botão_som.mp3-8b3cd37b6e464e201e5aedb4c8506c69.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

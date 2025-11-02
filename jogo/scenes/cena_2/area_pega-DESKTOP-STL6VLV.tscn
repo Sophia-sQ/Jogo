@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ra1021udgdd5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qyeut"]
+radius = 33.0
+
+[node name="area_pega" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qyeut")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
