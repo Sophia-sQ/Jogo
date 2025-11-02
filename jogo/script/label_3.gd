@@ -2,6 +2,7 @@ extends Label
 
 @onready var timer: Timer = $Timer
 @onready var label: Label = $"."
+
 var liga = 0
 var repete=0
 # Called when the node enters the scene tree for the first time.

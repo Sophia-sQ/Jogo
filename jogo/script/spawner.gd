@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var timer: Timer = $Timer
-@onready var asteroide = preload("res://scenes/cena 1/asteroide.tscn")
+@onready var asteroide = preload("res://scenes/cena_1/asteroide.tscn")
 var wait = 0
 @onready var timer_2: Timer = $Timer2
 @onready var gerenciamento: Node2D = $gerenciamento

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cesemypjahceu"]
+
+[node name="placa" type="Sprite2D"]
+position = Vector2(-23, 19)
+
+[node name="moldura" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 25.0
+offset_top = -21.0
+offset_right = 66.0
+offset_bottom = 20.0
+scale = Vector2(-1.47368, 1.50962)
+color = Color(0.437461, 0.202588, 0.016665, 1)
+
+[node name="interno" type="ColorRect" parent="."]
+z_index = -1
+offset_left = 23.0
+offset_top = -19.0
+offset_right = 63.0
+offset_bottom = 21.0
+scale = Vector2(-1.40011, 1.43426)
+color = Color(0.796243, 0.796243, 0.796243, 1)

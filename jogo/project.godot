@@ -18,6 +18,11 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 Gerenciador="*res://script/gerenciador.gd"
 Dialogos="*res://script/dialogos.gd"
+"Transição"="*res://scenes/transição.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [input]
 

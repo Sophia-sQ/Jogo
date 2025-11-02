@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1qnf0qr47ar3"]
+
+[ext_resource type="Texture2D" uid="uid://bsey11kyvq45y" path="res://assets/sprites/Outros/prat.png" id="1_0f317"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0f317"]
+size = Vector2(52, 52)
+
+[node name="prateleira" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0f317")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -15)
+shape = SubResource("RectangleShape2D_0f317")

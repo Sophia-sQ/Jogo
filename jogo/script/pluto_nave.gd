@@ -86,4 +86,6 @@ func _on_timer_2_timeout() -> void:
 	audio_stream_player_2d.playing = true
 	tween.tween_property(self, "position", position + Vector2(0, 320), 2)
 	if position.y>=200:
+		Transição._transição()
+		await Transição.fim_transição
 		Gerenciador.troca_cena.emit()
