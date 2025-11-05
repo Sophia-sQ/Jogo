@@ -19,6 +19,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if killzone_asteroide.ativo==true:
-		position.y += 0
+		position.y += 0 ##para ao explodir
 	else:
-		position.y += grav * delta
+		position.y += grav * delta ##nao explodido anda

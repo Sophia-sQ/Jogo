@@ -11,6 +11,7 @@ func _ready() -> void:
 	Gerenciador.passou_porta.connect(Callable(self, "_on_passou_porta"))
 
 func _on_body_entered(body: Node2D) -> void:
+	##controla quando ativa na area 1 e 2 da cena 2
 	if body == pluto_em_pe and once ==false and cena2.area==1:
 		once=true
 		Dialogos.dialogo(medica.global_position, medica.falas1)

@@ -1,0 +1,110 @@
+[gd_scene load_steps=15 format=3 uid="uid://bxygerldy7liw"]
+
+[ext_resource type="Script" uid="uid://bnj7ad705hnw5" path="res://script/perda.gd" id="1_n53w5"]
+[ext_resource type="Texture2D" uid="uid://djg8wp5si47w3" path="res://assets/sprites/Outros/grade_inicio.png" id="2_1nive"]
+[ext_resource type="Texture2D" uid="uid://ch1d6f6wx423" path="res://assets/sprites/Alien/parado/plumbum_par_oficial.png" id="3_n53w5"]
+[ext_resource type="Texture2D" uid="uid://ddjoqgwmedoh3" path="res://assets/sprites/Outros/perda (1).png" id="4_gg0xr"]
+[ext_resource type="Texture2D" uid="uid://dmfcn8n3oi00e" path="res://cutscenes/inicio/galax.png" id="5_nuu0c"]
+[ext_resource type="Texture2D" uid="uid://bd8cm4hvmolsn" path="res://assets/sprites/Outros/botoes/normal/sair_normal_20250926193042.png" id="9_jsv4v"]
+[ext_resource type="Texture2D" uid="uid://dv1t83vduehum" path="res://assets/sprites/Outros/botoes/clicado/sair_click_20250926193052.png" id="10_tpplq"]
+[ext_resource type="Texture2D" uid="uid://dikjef0sqpk5g" path="res://assets/sprites/Outros/botoes/hover/sair_hover_20250926193047.png" id="11_2v42d"]
+[ext_resource type="Texture2D" uid="uid://opbym32rlvrc" path="res://assets/sprites/Outros/botoes/normal/reiniciar_normal_20251104143646.png" id="12_iwqgo"]
+[ext_resource type="Texture2D" uid="uid://63sv6j3sh7pn" path="res://assets/sprites/Outros/botoes/clicado/reiniciar_click_20251104143656.png" id="13_5jj7n"]
+[ext_resource type="Texture2D" uid="uid://c5lynjt6usasc" path="res://assets/sprites/Outros/botoes/hover/reiniciar_hover_20251104143652.png" id="14_ywe8l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enely"]
+atlas = ExtResource("3_n53w5")
+region = Rect2(0, 25, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxfbb"]
+atlas = ExtResource("3_n53w5")
+region = Rect2(64, 25, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m3vrq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enely")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxfbb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="perda" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n53w5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.35401, 1.35401)
+texture = ExtResource("2_1nive")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(233, 446)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_m3vrq")
+autoplay = "default"
+frame = 1
+frame_progress = 0.0579246
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -75.0
+offset_top = -459.0
+offset_right = -35.0
+offset_bottom = -419.0
+scale = Vector2(32.0509, 32.0509)
+texture = ExtResource("4_gg0xr")
+expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+offset_left = 301.0
+offset_top = 211.0
+offset_right = 341.0
+offset_bottom = 251.0
+scale = Vector2(14.381, 14.381)
+texture = ExtResource("5_nuu0c")
+expand_mode = 3
+
+[node name="sair" type="TextureButton" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 453.0
+offset_top = 344.0
+offset_right = 727.0
+offset_bottom = 429.0
+texture_normal = ExtResource("9_jsv4v")
+texture_pressed = ExtResource("10_tpplq")
+texture_hover = ExtResource("11_2v42d")
+stretch_mode = 0
+
+[node name="reiniciar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 433.0
+offset_right = 726.0
+offset_bottom = 523.0
+texture_normal = ExtResource("12_iwqgo")
+texture_pressed = ExtResource("13_5jj7n")
+texture_hover = ExtResource("14_ywe8l")
+stretch_mode = 0
+
+[connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="reiniciar" to="." method="_on_reiniciar_pressed"]

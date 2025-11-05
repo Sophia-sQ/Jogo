@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfafwyelrfoes"]
-
-[ext_resource type="Texture2D" uid="uid://b2hg7vjrl0kxb" path="res://assets/sprites/Outros/Tapete.png" id="1_txvkm"]
-
-[node name="Tapete" type="Sprite2D"]
-texture = ExtResource("1_txvkm")

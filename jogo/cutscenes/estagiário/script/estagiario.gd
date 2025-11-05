@@ -18,6 +18,7 @@ func _process(delta):
 func _on_animation_finished() -> void:
 	if animation=="susto" and once==false:
 		once=true
+		##deixa ele assustado por mais tempo
 		frame=1
 		await get_tree().create_timer(1).timeout
 		stop()

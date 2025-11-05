@@ -1,0 +1,161 @@
+[gd_scene load_steps=22 format=4 uid="uid://cfuoq1uyk2a3r"]
+
+[ext_resource type="PackedScene" uid="uid://bpaauyxfwvr2n" path="res://scenes/cena_1/Background.tscn" id="1_h73c4"]
+[ext_resource type="Texture2D" uid="uid://cxqsnabf4ahgv" path="res://cutscenes/inicio/Alien_plutton_nav (1).png" id="2_uui5l"]
+[ext_resource type="Script" uid="uid://dwqeotqjw1v5a" path="res://cutscenes/inicio/plumbum.gd" id="3_4hago"]
+[ext_resource type="Texture2D" uid="uid://cwmsuoin26fhn" path="res://cutscenes/inicio/fundo galax.png" id="4_gjjcl"]
+[ext_resource type="Script" uid="uid://bxf2il3med83j" path="res://cutscenes/inicio/tile_map_layer.gd" id="5_kait0"]
+[ext_resource type="Texture2D" uid="uid://dmfcn8n3oi00e" path="res://cutscenes/inicio/galax.png" id="6_6pj40"]
+[ext_resource type="Texture2D" uid="uid://dtv7qkt4hcn8a" path="res://cutscenes/inicio/inicio_letreiro.png" id="7_nkpmc"]
+[ext_resource type="Texture2D" uid="uid://bddhifm510ms7" path="res://cutscenes/inicio/botao_inicio (3).png" id="8_fsdjo"]
+[ext_resource type="PackedScene" uid="uid://8pv7iq43lqsr" path="res://scenes/cena_1/background_2.tscn" id="9_prb5i"]
+[ext_resource type="PackedScene" uid="uid://dftshcqca2sob" path="res://scenes/botões.tscn" id="10_xwyuh"]
+[ext_resource type="FontFile" uid="uid://44dh0tdthaie" path="res://assets/fonts/PixelOperator8.ttf" id="11_uui5l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uvds"]
+atlas = ExtResource("2_uui5l")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at6rn"]
+atlas = ExtResource("2_uui5l")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dihg0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uvds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at6rn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0y70q"]
+texture = ExtResource("4_gjjcl")
+61:27/0 = 0
+76:11/0 = 0
+86:6/0 = 0
+90:35/0 = 0
+102:55/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qrn07"]
+sources/0 = SubResource("TileSetAtlasSource_0y70q")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rqglp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_6pj40")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_at6rn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_nkpmc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dihg0"]
+atlas = ExtResource("8_fsdjo")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqglp"]
+atlas = ExtResource("8_fsdjo")
+region = Rect2(128, 0, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0y70q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dihg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqglp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="cena" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_h73c4")]
+z_index = -120
+position = Vector2(-341, -122)
+
+[node name="plumbum" type="AnimatedSprite2D" parent="."]
+z_index = 10
+position = Vector2(974, 512)
+scale = Vector2(2.5, 2.577)
+sprite_frames = SubResource("SpriteFrames_dihg0")
+frame = 1
+frame_progress = 0.346995
+speed_scale = 4.0
+script = ExtResource("3_4hago")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -4096
+position = Vector2(227, 191)
+scale = Vector2(3.88, 4)
+tile_map_data = PackedByteArray("AAD7//3/AABWAAYAAAD7//7/AABWAAYAAAD7////AABWAAYAAAD8//3/AABWAAYAAAD8//7/AABWAAYAAAD8////AABWAAYAAAD9//3/AABWAAYAAAD9//7/AABWAAYAAAD9////AABWAAYAAAD+//3/AABWAAYAAAD+//7/AABWAAYAAAD+////AABWAAYAAAD///3/AABWAAYAAAD///7/AABWAAYAAAD/////AABWAAYAAAAAAP3/AABWAAYAAAAAAP7/AABWAAYAAAAAAP//AABWAAYAAAABAP3/AABWAAYAAAABAP7/AABWAAYAAAABAP//AABWAAYAAAACAP3/AABWAAYAAAACAP7/AABWAAYAAAACAP//AABWAAYAAAADAP3/AABWAAYAAAADAP7/AABWAAYAAAADAP//AABWAAYAAAAEAP3/AABWAAYAAAAEAP7/AABWAAYAAAAEAP//AABWAAYAAAAFAP3/AABWAAYAAAAFAP7/AABWAAYAAAAFAP//AABWAAYAAAAGAP3/AABWAAYAAAAGAP7/AABWAAYAAAAGAP//AABWAAYAAAAHAP3/AABWAAYAAAAHAP7/AABWAAYAAAAHAP//AABWAAYAAAAIAP3/AABWAAYAAAAIAP7/AABWAAYAAAAIAP//AABWAAYAAAAJAP3/AABWAAYAAAAJAP7/AABWAAYAAAAJAP//AABWAAYAAAAKAP3/AABWAAYAAAAKAP7/AABWAAYAAAAKAP//AABWAAYAAAALAP3/AABWAAYAAAALAP7/AABWAAYAAAALAP//AABWAAYAAAAMAP3/AABWAAYAAAAMAP7/AABWAAYAAAAMAP//AABWAAYAAAANAP3/AABWAAYAAAANAP7/AABWAAYAAAANAP//AABWAAYAAAAOAP3/AABWAAYAAAAOAP7/AABWAAYAAAAOAP//AABWAAYAAAD8/wAAAABMAAsAAAD8/wEAAABMAAsAAAD9/wAAAABMAAsAAAD9/wEAAABMAAsAAAD+/wAAAABMAAsAAAD+/wEAAABMAAsAAAD//wAAAABMAAsAAAD//wEAAABMAAsAAAAAAAAAAABMAAsAAAAAAAEAAABMAAsAAAABAAAAAABMAAsAAAABAAEAAABMAAsAAAACAAAAAABMAAsAAAACAAEAAABMAAsAAAADAAAAAABMAAsAAAADAAEAAABMAAsAAAAEAAAAAABMAAsAAAAEAAEAAABMAAsAAAAFAAAAAABMAAsAAAAFAAEAAABMAAsAAAAGAAAAAABMAAsAAAAGAAEAAABMAAsAAAAHAAAAAABMAAsAAAAHAAEAAABMAAsAAAAIAAAAAABMAAsAAAAIAAEAAABMAAsAAAAJAAAAAABMAAsAAAAJAAEAAABMAAsAAAAKAAAAAABMAAsAAAAKAAEAAABMAAsAAAALAAAAAABMAAsAAAALAAEAAABMAAsAAAAMAAAAAABMAAsAAAAMAAEAAABMAAsAAAANAAAAAABMAAsAAAANAAEAAABMAAsAAAAOAAAAAABMAAsAAAAOAAEAAABMAAsAAAD8/wIAAAA9ABsAAAD8/wMAAAA9ABsAAAD9/wIAAAA9ABsAAAD9/wMAAAA9ABsAAAD+/wIAAAA9ABsAAAD+/wMAAAA9ABsAAAD//wIAAAA9ABsAAAD//wMAAAA9ABsAAAAAAAIAAAA9ABsAAAAAAAMAAAA9ABsAAAABAAIAAAA9ABsAAAABAAMAAAA9ABsAAAACAAIAAAA9ABsAAAACAAMAAAA9ABsAAAADAAIAAAA9ABsAAAADAAMAAAA9ABsAAAAEAAIAAAA9ABsAAAAEAAMAAAA9ABsAAAAFAAIAAAA9ABsAAAAFAAMAAAA9ABsAAAAGAAIAAAA9ABsAAAAGAAMAAAA9ABsAAAAHAAIAAAA9ABsAAAAHAAMAAAA9ABsAAAAIAAIAAAA9ABsAAAAIAAMAAAA9ABsAAAAJAAIAAAA9ABsAAAAJAAMAAAA9ABsAAAAKAAIAAAA9ABsAAAAKAAMAAAA9ABsAAAALAAIAAAA9ABsAAAALAAMAAAA9ABsAAAAMAAIAAAA9ABsAAAAMAAMAAAA9ABsAAAANAAIAAAA9ABsAAAANAAMAAAA9ABsAAAAOAAIAAAA9ABsAAAAOAAMAAAA9ABsAAAD8/wQAAABaACMAAAD8/wUAAABmADcAAAD9/wQAAABaACMAAAD9/wUAAABmADcAAAD+/wQAAABaACMAAAD+/wUAAABmADcAAAD//wQAAABaACMAAAD//wUAAABmADcAAAAAAAQAAABaACMAAAAAAAUAAABmADcAAAABAAQAAABaACMAAAABAAUAAABmADcAAAACAAQAAABaACMAAAACAAUAAABmADcAAAADAAQAAABaACMAAAADAAUAAABmADcAAAAEAAQAAABaACMAAAAEAAUAAABmADcAAAAFAAQAAABaACMAAAAFAAUAAABmADcAAAAGAAQAAABaACMAAAAGAAUAAABmADcAAAAHAAQAAABaACMAAAAHAAUAAABmADcAAAAIAAQAAABaACMAAAAIAAUAAABmADcAAAAJAAQAAABaACMAAAAJAAUAAABmADcAAAAKAAQAAABaACMAAAAKAAUAAABmADcAAAALAAQAAABaACMAAAALAAUAAABmADcAAAAMAAQAAABaACMAAAAMAAUAAABmADcAAAANAAQAAABaACMAAAANAAUAAABmADcAAAD8/wYAAABmADcAAAD8/wcAAABmADcAAAD8/wgAAABmADcAAAD9/wYAAABmADcAAAD9/wcAAABmADcAAAD9/wgAAABmADcAAAD+/wYAAABmADcAAAD+/wcAAABmADcAAAD+/wgAAABmADcAAAD//wYAAABmADcAAAD//wcAAABmADcAAAD//wgAAABmADcAAAAAAAYAAABmADcAAAAAAAcAAABmADcAAAAAAAgAAABmADcAAAABAAYAAABmADcAAAABAAcAAABmADcAAAABAAgAAABmADcAAAACAAYAAABmADcAAAACAAcAAABmADcAAAACAAgAAABmADcAAAADAAYAAABmADcAAAADAAcAAABmADcAAAADAAgAAABmADcAAAAEAAYAAABmADcAAAAEAAcAAABmADcAAAAEAAgAAABmADcAAAAFAAYAAABmADcAAAAFAAcAAABmADcAAAAFAAgAAABmADcAAAAGAAYAAABmADcAAAAGAAcAAABmADcAAAAGAAgAAABmADcAAAAHAAYAAABmADcAAAAHAAcAAABmADcAAAAHAAgAAABmADcAAAAIAAYAAABmADcAAAAIAAcAAABmADcAAAAIAAgAAABmADcAAAAJAAYAAABmADcAAAAJAAcAAABmADcAAAAJAAgAAABmADcAAAAKAAYAAABmADcAAAAKAAcAAABmADcAAAAKAAgAAABmADcAAAALAAYAAABmADcAAAALAAcAAABmADcAAAALAAgAAABmADcAAAAMAAYAAABmADcAAAAMAAcAAABmADcAAAAMAAgAAABmADcAAAANAAYAAABmADcAAAANAAcAAABmADcAAAANAAgAAABmADcAAAAOAAUAAABmADcAAAAOAAYAAABmADcAAAAOAAcAAABmADcAAAAOAAgAAABmADcAAAAPAAUAAABmADcAAAAPAAYAAABmADcAAAAPAAcAAABmADcAAAAPAAgAAABmADcAAAAOAAQAAABaACMAAAA=")
+tile_set = SubResource("TileSet_qrn07")
+script = ExtResource("5_kait0")
+
+[node name="planeta" type="AnimatedSprite2D" parent="."]
+z_index = -100
+position = Vector2(544, 320)
+scale = Vector2(4.5, 4.64)
+sprite_frames = SubResource("SpriteFrames_rqglp")
+
+[node name="letreiro" type="AnimatedSprite2D" parent="."]
+z_index = 4096
+position = Vector2(554, 320)
+scale = Vector2(2.5, 2.578)
+sprite_frames = SubResource("SpriteFrames_at6rn")
+
+[node name="botton" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 4096
+position = Vector2(544, 549)
+scale = Vector2(2.1, 2.165)
+sprite_frames = SubResource("SpriteFrames_0y70q")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 330)
+
+[node name="Background2" parent="." instance=ExtResource("9_prb5i")]
+z_index = -120
+position = Vector2(-362, -19)
+scale = Vector2(2, 2)
+
+[node name="Menu" parent="." instance=ExtResource("10_xwyuh")]
+z_index = 265
+offset_left = 547.0
+offset_top = 505.0
+offset_right = 547.0
+offset_bottom = 505.0
+scale = Vector2(0.762795, 0.762795)
+
+[node name="Label" type="Label" parent="."]
+z_index = 4096
+offset_left = 708.0
+offset_top = 633.0
+offset_right = 1282.0
+offset_bottom = 656.0
+scale = Vector2(1.52127, 1.52127)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_uui5l")
+theme_override_font_sizes/font_size = 8
+text = "* Se é a sua primeira vez jogando, leia o guia."

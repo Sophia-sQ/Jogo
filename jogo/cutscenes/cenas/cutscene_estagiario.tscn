@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dlw763i61atlw"]
+[gd_scene load_steps=59 format=3 uid="uid://dlw763i61atlw"]
 
 [ext_resource type="Texture2D" uid="uid://drro1ysltux3l" path="res://cutscenes/sprites/Quintal_oficial.png" id="1_b2oec"]
 [ext_resource type="Texture2D" uid="uid://bor7u85d6j4cf" path="res://cutscenes/sprites/plutton_nav_quebrada (4).png" id="2_m62b3"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" uid="uid://bm66qamwmhqfs" path="res://cutscenes/estagiário/script/cracha.gd" id="13_lgnow"]
 [ext_resource type="Script" uid="uid://ew20ghwfye8p" path="res://cutscenes/estagiário/script/plumbum_parado.gd" id="14_bs2ci"]
 [ext_resource type="Script" uid="uid://dxorf7ux2ascm" path="res://cutscenes/estagiário/script/cracha_grande.gd" id="14_lgnow"]
+[ext_resource type="Texture2D" uid="uid://ccrrppcgc77ip" path="res://cutscenes/sprites/placachemix.png" id="16_doh3p"]
+[ext_resource type="FontFile" uid="uid://44dh0tdthaie" path="res://assets/fonts/PixelOperator8.ttf" id="17_0wc0e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbs1c"]
 atlas = ExtResource("2_m62b3")
@@ -287,6 +289,35 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_33nwb"]
+atlas = ExtResource("16_doh3p")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y08ba"]
+atlas = ExtResource("16_doh3p")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc744"]
+atlas = ExtResource("16_doh3p")
+region = Rect2(0, 128, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxw2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33nwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y08ba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc744")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="cutscene_estagiario" type="Node2D"]
 
 [node name="QuintalOficial" type="Sprite2D" parent="."]
@@ -350,5 +381,26 @@ script = ExtResource("14_bs2ci")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(709, 392)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(243, 267)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_rxw2n")
+autoplay = "default"
+frame_progress = 0.709303
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 129.0
+offset_top = 107.0
+offset_right = 1281.0
+offset_bottom = 171.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("17_0wc0e")
+theme_override_font_sizes/font_size = 42
+text = "Você conseguiu: crachá"
+horizontal_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="."]
 
 [connection signal="animation_finished" from="estagiario" to="estagiario" method="_on_animation_finished"]

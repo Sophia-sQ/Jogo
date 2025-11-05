@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnpvnqnwyenah"]
+
+[ext_resource type="Script" uid="uid://cqwxuv5yon08n" path="res://script/pause_button.gd" id="1_8gfrl"]
+[ext_resource type="Texture2D" uid="uid://bv0so02unybdm" path="res://assets/sprites/Outros/botoes/normal/fechar__normal.png" id="2_rg3v6"]
+[ext_resource type="Texture2D" uid="uid://bgeqbpf13c6u" path="res://assets/sprites/Outros/botoes/clicado/fechar_clicado.png" id="3_byk2f"]
+[ext_resource type="Texture2D" uid="uid://0mpjbpptil77" path="res://assets/sprites/Outros/botoes/hover/fechar_hover.png" id="4_14eaq"]
+
+[node name="pause button" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8gfrl")
+
+[node name="pause" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_rg3v6")
+texture_pressed = ExtResource("3_byk2f")
+texture_hover = ExtResource("4_14eaq")
+stretch_mode = 0
+
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]

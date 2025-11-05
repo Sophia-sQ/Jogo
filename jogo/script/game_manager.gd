@@ -13,6 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	##controla HUD coracoes
 		if Gerenciador.health<coracoes:
 			animated_sprite.frame+=2
 			coracoes = Gerenciador.health

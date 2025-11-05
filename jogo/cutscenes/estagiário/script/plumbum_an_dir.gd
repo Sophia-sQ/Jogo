@@ -1,5 +1,6 @@
 extends AnimatedSprite2D
 var voltando:=false
+var espera=true
 func _ready() -> void:
 	Transição.fim_transição.connect(Callable(self, "_on_fim_transição"))
 	play()
@@ -14,9 +15,11 @@ func _process(delta: float) -> void:
 	else:
 		position.x-=120*delta
 		flip_h=true
+		espera=false
 		if position.x<=60:
 			Transição._transição()
 
 func _on_fim_transição():
-	get_tree().change_scene_to_file("res://scenes/cena_2/cena2.tscn")
+	if espera==false:
+		get_tree().change_scene_to_file("res://scenes/cena_2/cena2.tscn")
 	

@@ -2,6 +2,7 @@ extends NinePatchRect
 
 @onready var sprite: Node2D = $medica
 signal fim_dialogo
+signal inicio_dialogo
 @onready var text_box = preload("res://scenes/cena_2/dialogo_caixa.tscn")
 var texto: Array[String] =[]
 var linha: int = 0
@@ -12,9 +13,9 @@ var caixa_posicao: Vector2
 var fala = 0
 # Called when the node enters the scene tree for the first time.
 func dialogo(posicao: Vector2, linhas: Array[String]):
+	inicio_dialogo.emit()
 	if ativo:
 		return
-	
 	texto=linhas
 	caixa_posicao=posicao
 	mostrar_caixa_texto()
@@ -32,8 +33,10 @@ func _on_acabou():
 	avancar=true
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if (event.is_action_pressed("space") &&
-	ativo):
+	#impede que o player acesse coisas que nao existam e pule dialogos
+	##controla grandes grupos de texto
+	if (event.is_action_pressed("space") and
+	ativo and avancar):
 		caixa_de_texto.queue_free()
 		linha+=1
 		if linha >= texto.size():

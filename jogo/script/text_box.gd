@@ -16,6 +16,8 @@ func _ready() -> void:
 	z_index=10
 	
 func mostrar_texto(texto_mostra: String):
+	##mostra texto para se adequar a caixa
+	visible=true
 	fala=texto_mostra
 	label.text=texto_mostra
 	await resized
@@ -32,6 +34,7 @@ func mostrar_texto(texto_mostra: String):
 	mostrar_letra()
 
 func mostrar_letra():
+	##tamanho de cada faixa de dialogo e define tempo de exibicao de caracteres
 	label.text += fala[letra]
 	letra+=1
 	if letra >= fala.length():

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jogo"
-run/main_scene="uid://dftshcqca2sob"
+run/main_scene="uid://cfuoq1uyk2a3r"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 Gerenciador="*res://script/gerenciador.gd"
 Dialogos="*res://script/dialogos.gd"
 "Transição"="*res://scenes/transição.tscn"
+Add_item="*res://script/add_item.gd"
 
 [display]
 
@@ -53,6 +54,11 @@ down={
 space={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
+pause={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

@@ -6,6 +6,7 @@ var corpo=false
 @export var item: String = "vazio"
 @onready var tela_puzzle: Control = get_node("Tela_puzzle")
 @onready var animated_sprite: AnimatedSprite2D = $Sprite2D
+@onready var label: Label = get_node("Label")
 
 
 func _ready() -> void:
@@ -16,7 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 		print("Corpo dentro (baú)")
 		corpo=true
 	if Input.is_action_just_pressed("space"):
-		get_tree().paused=true
+		get_tree().paused=true ##pausa para comecar puzzle
 		print("pausar")
 
 func _on_body_exited(body: Node2D) -> void:
@@ -24,14 +25,17 @@ func _on_body_exited(body: Node2D) -> void:
 		print("Corpo fora (baú)")
 		corpo=false
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void: ##alternativa caso espaço falhe
 	if event.is_action_pressed("space") and corpo==true and is_instance_valid(tela_puzzle)==true:
 		print("ta aceitando")
-		tela_puzzle._chamado(num_bau)
+		tela_puzzle._chamado(num_bau) ##começa puzzle
 		get_tree().paused=true		
 
 
 func _on_tela_puzzle_certo() -> void:
 	print("bau aberto")
 	animated_sprite.play("destrava")
-	Gerenciador.add_item.emit(item)
+	Gerenciador.add_item.emit(item) ##item para o jogador
+	label.visible=true ##mostra qual item
+	await get_tree().create_timer(3).timeout
+	label.visible=false

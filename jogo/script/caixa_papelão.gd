@@ -7,7 +7,7 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body == g:
+	if body == g: ##caso guarda ou player toquem manda sinal de lentidão e desaparece
 		Gerenciador.Sg.emit()
 		animated_sprite_2d.play("atrito")
 	if body == p:

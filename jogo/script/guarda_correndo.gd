@@ -6,6 +6,7 @@ var V = 3.3
 @onready var plu: CharacterBody2D = $"../pluto_correndo"
 @onready var gua: CharacterBody2D = $"."
 @onready var cam: Camera2D = $"../pluto_correndo/Camera2D"
+@onready var perda: Control = $"../CanvasLayer/perda"
 
 func _ready() -> void:
 	Gerenciador.Sg.connect(Callable(self, "_on_sinal_guarda"))
@@ -26,6 +27,7 @@ func _on_sinal_guarda():
 	if position.x >= 14000:
 			V = 1.4
 
+
 func _physics_process(delta: float) -> void:
 	position.x += V
 	# Add the gravity.
@@ -37,25 +39,26 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_timer_guarda_timeout() -> void:
+	##verifica relugarmente a posicao para mudar velocidade
 	V = 4
 	
 	if position.x >= -200 and position.x <= 3499:
 		V = 3.3
 
 	if position.x >= 3500 and position.x <=6999:
-		V = 3.35
+		V = 3.375
 	
 	if position.x >= 7000 and position.x <=10499:
 		V = 3.45
 	
 	if position.x >= 10500 and position.x <= 13999:
-		V = 3.55
+		V = 3.6
 	
 	if position.x >= 14000:
-		V = 3.65
+		V = 3.7
 	
 
 
 func _on_plu_mrt_body_entered(body: Node2D) -> void:
-	print("Morreu")
-	get_tree().reload_current_scene()
+	##player morre
+	perda._perda()

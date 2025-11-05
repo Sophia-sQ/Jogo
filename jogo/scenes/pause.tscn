@@ -1,0 +1,142 @@
+[gd_scene load_steps=20 format=3 uid="uid://c621dwi7xe4k1"]
+
+[ext_resource type="Script" uid="uid://bi71bk7fn0ie6" path="res://script/pause.gd" id="1_xw83q"]
+[ext_resource type="Texture2D" uid="uid://djg8wp5si47w3" path="res://assets/sprites/Outros/grade_inicio.png" id="2_0akjr"]
+[ext_resource type="Texture2D" uid="uid://dge6bdq1p5w88" path="res://cutscenes/sprites/AnimaFoguete.png" id="3_capb0"]
+[ext_resource type="Texture2D" uid="uid://behjtnp0je1gr" path="res://assets/sprites/Outros/voce_pausou.png" id="4_gcmcy"]
+[ext_resource type="Texture2D" uid="uid://dmfcn8n3oi00e" path="res://cutscenes/inicio/galax.png" id="5_jl8xs"]
+[ext_resource type="Texture2D" uid="uid://c1s21ys4rwo76" path="res://assets/sprites/Outros/botoes/normal/jogar_normal_20250926193006.png" id="6_qn06s"]
+[ext_resource type="Texture2D" uid="uid://djinkpr36cpwa" path="res://assets/sprites/Outros/botoes/clicado/jogar_click_20250926193017.png" id="7_vrtv1"]
+[ext_resource type="Texture2D" uid="uid://cebhwfwew1kbu" path="res://assets/sprites/Outros/botoes/hover/jogar_hover_20250926193012.png" id="8_30wyh"]
+[ext_resource type="Texture2D" uid="uid://bd8cm4hvmolsn" path="res://assets/sprites/Outros/botoes/normal/sair_normal_20250926193042.png" id="9_gcd8f"]
+[ext_resource type="Texture2D" uid="uid://dv1t83vduehum" path="res://assets/sprites/Outros/botoes/clicado/sair_click_20250926193052.png" id="10_t3fa8"]
+[ext_resource type="Texture2D" uid="uid://dikjef0sqpk5g" path="res://assets/sprites/Outros/botoes/hover/sair_hover_20250926193047.png" id="11_nbku2"]
+[ext_resource type="Texture2D" uid="uid://opbym32rlvrc" path="res://assets/sprites/Outros/botoes/normal/reiniciar_normal_20251104143646.png" id="12_gcmcy"]
+[ext_resource type="Texture2D" uid="uid://63sv6j3sh7pn" path="res://assets/sprites/Outros/botoes/clicado/reiniciar_click_20251104143656.png" id="13_jl8xs"]
+[ext_resource type="Texture2D" uid="uid://c5lynjt6usasc" path="res://assets/sprites/Outros/botoes/hover/reiniciar_hover_20251104143652.png" id="14_qn06s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wikw"]
+atlas = ExtResource("3_capb0")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omknb"]
+atlas = ExtResource("3_capb0")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onpur"]
+atlas = ExtResource("3_capb0")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4usov"]
+atlas = ExtResource("3_capb0")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m3vrq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wikw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omknb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onpur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4usov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_xw83q")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.35401, 1.35401)
+texture = ExtResource("2_0akjr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1004, 304)
+scale = Vector2(3.3, 3.3)
+sprite_frames = SubResource("SpriteFrames_m3vrq")
+autoplay = "default"
+frame = 3
+frame_progress = 0.0579246
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -4.0
+offset_top = -459.0
+offset_right = 36.0
+offset_bottom = -419.0
+scale = Vector2(32.0509, 32.0509)
+texture = ExtResource("4_gcmcy")
+expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 301.0
+offset_top = 211.0
+offset_right = 341.0
+offset_bottom = 251.0
+scale = Vector2(14.381, 14.381)
+texture = ExtResource("5_jl8xs")
+expand_mode = 3
+
+[node name="jogar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 177.0
+offset_right = 722.0
+offset_bottom = 262.0
+texture_normal = ExtResource("6_qn06s")
+texture_pressed = ExtResource("7_vrtv1")
+texture_hover = ExtResource("8_30wyh")
+stretch_mode = 0
+
+[node name="sair" type="TextureButton" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 453.0
+offset_top = 266.0
+offset_right = 727.0
+offset_bottom = 351.0
+texture_normal = ExtResource("9_gcd8f")
+texture_pressed = ExtResource("10_t3fa8")
+texture_hover = ExtResource("11_nbku2")
+stretch_mode = 0
+
+[node name="reiniciar" type="TextureButton" parent="."]
+process_mode = 4
+visible = false
+layout_mode = 0
+offset_left = 454.0
+offset_top = 355.0
+offset_right = 726.0
+offset_bottom = 445.0
+texture_normal = ExtResource("12_gcmcy")
+texture_pressed = ExtResource("13_jl8xs")
+texture_hover = ExtResource("14_qn06s")
+stretch_mode = 0
+
+[connection signal="pressed" from="jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="reiniciar" to="." method="_on_reiniciar_pressed"]

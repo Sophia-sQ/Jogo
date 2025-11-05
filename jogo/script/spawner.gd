@@ -12,12 +12,15 @@ func _ready() -> void:
 func _on_timer_timeout() -> void:
 	if gerenciamento.fim==false:
 		var num = randf()
+		##chance de aparecer de 30%
 		if num < 0.3:
 			var ast = asteroide.instantiate()
 			ast.position = position
 			get_parent().get_parent().get_node("Asteroides").add_child(ast)
+			##add asteroid
 		wait += 1
 		if wait > 2:
+			##aumenta o tempo que eles aparecem
 			timer.wait_time -= 0.5
 			wait = 0
 	else:
@@ -26,5 +29,6 @@ func _on_timer_timeout() -> void:
 		ast.position = position
 		get_parent().get_parent().get_node("Asteroides").add_child(ast)
 
+##varios asteroides
 func _on_morte():
 	timer.one_shot = true

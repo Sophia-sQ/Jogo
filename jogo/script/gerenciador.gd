@@ -1,5 +1,5 @@
 extends Node
-
+		
 # Cena 1
 signal kill
 signal morte
@@ -13,6 +13,9 @@ signal add_item(String)
 signal lose_item(String)
 signal passou_porta
 
-# Cena 4
+# Cena 3
 signal Sp
 signal Sg
+
+#--------------
+var fim:=false

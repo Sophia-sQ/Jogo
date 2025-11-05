@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlhgkskkj4hst"]
+[gd_scene load_steps=13 format=3 uid="uid://dlhgkskkj4hst"]
 
 [ext_resource type="FontFile" uid="uid://cgbgrhu661ghy" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_axxjw"]
 [ext_resource type="FontFile" uid="uid://44dh0tdthaie" path="res://assets/fonts/PixelOperator8.ttf" id="1_f76k3"]
 [ext_resource type="Script" uid="uid://d1mrc8e2uc8r0" path="res://script/guia.gd" id="1_gob10"]
 [ext_resource type="Texture2D" uid="uid://s1bw417yiv8s" path="res://assets/sprites/Outros/botoes/normal/seta_normal.png" id="3_pp6oi"]
 [ext_resource type="Texture2D" uid="uid://b35ll4lqv5gfg" path="res://assets/sprites/Outros/botoes/hover/seta_hover.png" id="4_gob10"]
+[ext_resource type="Texture2D" uid="uid://dtcm1ouyxub7g" path="res://assets/sprites/Outros/seta_baixo.png" id="6_tjmd0"]
+[ext_resource type="Texture2D" uid="uid://crftmo8j0a6px" path="res://assets/sprites/Outros/seta_cima.png" id="7_q0w88"]
+[ext_resource type="Texture2D" uid="uid://dxya1dlggd2o4" path="res://assets/sprites/Outros/seta_dir.png" id="8_ygx4r"]
+[ext_resource type="Texture2D" uid="uid://bsi7gn1ulnn1g" path="res://assets/sprites/Outros/seta_esquerda.png" id="9_bufr6"]
+[ext_resource type="Texture2D" uid="uid://ctqi2buxlry45" path="res://assets/sprites/Outros/espaço_tecla.png" id="10_qnrj0"]
+[ext_resource type="Texture2D" uid="uid://bp301jgcky4xw" path="res://assets/sprites/Outros/mouse1.png" id="11_ygx4r"]
+[ext_resource type="Texture2D" uid="uid://b2je6ecll0kkn" path="res://assets/sprites/Outros/esc.png" id="12_bufr6"]
 
 [node name="guia" type="Control"]
 layout_mode = 3
@@ -19,72 +26,16 @@ offset_bottom = 40.0
 scale = Vector2(51.5044, 26.7717)
 color = Color(0.0295066, 0.0295066, 0.0295066, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="título" type="Label" parent="."]
 layout_mode = 0
-offset_left = 794.0
-offset_top = 24.0
-offset_right = 1175.0
-offset_bottom = 88.0
+offset_left = 335.0
+offset_top = 19.0
+offset_right = 716.0
+offset_bottom = 83.0
 theme_override_fonts/font = ExtResource("1_axxjw")
 theme_override_font_sizes/font_size = 64
 text = "GUIA"
 horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 540.0
-offset_top = 224.0
-offset_right = 985.0
-offset_bottom = 253.0
-theme_override_fonts/font = ExtResource("1_f76k3")
-theme_override_font_sizes/font_size = 28
-text = "Andar para esquerda"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="."]
-layout_mode = 0
-offset_left = 540.0
-offset_top = 267.0
-offset_right = 985.0
-offset_bottom = 296.0
-theme_override_fonts/font = ExtResource("1_f76k3")
-theme_override_font_sizes/font_size = 28
-text = "Andar para direita"
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="."]
-layout_mode = 0
-offset_left = 540.0
-offset_top = 313.0
-offset_right = 985.0
-offset_bottom = 342.0
-theme_override_fonts/font = ExtResource("1_f76k3")
-theme_override_font_sizes/font_size = 28
-text = "Andar para cima"
-vertical_alignment = 1
-
-[node name="Label5" type="Label" parent="."]
-layout_mode = 0
-offset_left = 540.0
-offset_top = 357.0
-offset_right = 985.0
-offset_bottom = 386.0
-theme_override_fonts/font = ExtResource("1_f76k3")
-theme_override_font_sizes/font_size = 28
-text = "Andar para baixo"
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="."]
-layout_mode = 0
-offset_left = 540.0
-offset_top = 397.0
-offset_right = 985.0
-offset_bottom = 426.0
-theme_override_fonts/font = ExtResource("1_f76k3")
-theme_override_font_sizes/font_size = 28
-text = "interagir com o ambiente"
 vertical_alignment = 1
 
 [node name="voltar" type="TextureButton" parent="."]
@@ -94,5 +45,212 @@ offset_bottom = 40.0
 scale = Vector2(1.46325, 1.46325)
 texture_normal = ExtResource("3_pp6oi")
 texture_hover = ExtResource("4_gob10")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 330)
+
+[node name="orientações" type="Node2D" parent="."]
+position = Vector2(53, 0)
+
+[node name="Label2" type="Label" parent="orientações"]
+offset_left = 623.0
+offset_top = 164.0
+offset_right = 1068.0
+offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "Andar para esquerda"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="orientações"]
+offset_left = 623.0
+offset_top = 232.0
+offset_right = 1068.0
+offset_bottom = 261.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "Andar para direita"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="orientações"]
+offset_left = 623.0
+offset_top = 303.0
+offset_right = 1068.0
+offset_bottom = 332.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "Andar para cima"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="orientações"]
+offset_left = 623.0
+offset_top = 380.0
+offset_right = 1068.0
+offset_bottom = 409.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "Andar para baixo"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="orientações"]
+offset_left = 623.0
+offset_top = 436.0
+offset_right = 1097.0
+offset_bottom = 465.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "ações (pegar, falar etc.)"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="orientações"]
+offset_left = 623.0
+offset_top = 502.0
+offset_right = 1068.0
+offset_bottom = 531.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "apertar botões"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="orientações"]
+offset_left = 623.0
+offset_top = 587.0
+offset_right = 1068.0
+offset_bottom = 616.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "pausar"
+vertical_alignment = 1
+
+[node name="botoes" type="Node2D" parent="."]
+position = Vector2(33, 0)
+
+[node name="Label" type="Label" parent="botoes"]
+offset_left = 128.0
+offset_top = 162.0
+offset_right = 573.0
+offset_bottom = 191.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "Seta esquerda/A"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="botoes"]
+offset_left = 128.0
+offset_top = 230.0
+offset_right = 573.0
+offset_bottom = 259.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "Seta direita/D"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="botoes"]
+offset_left = 128.0
+offset_top = 299.0
+offset_right = 573.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "Seta para cima/W"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="botoes"]
+offset_left = 128.0
+offset_top = 376.0
+offset_right = 573.0
+offset_bottom = 405.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "Seta para baixo/S"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="botoes"]
+offset_left = 128.0
+offset_top = 434.0
+offset_right = 573.0
+offset_bottom = 463.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "Espaço"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="botoes"]
+offset_left = 128.0
+offset_top = 503.0
+offset_right = 601.0
+offset_bottom = 532.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "Botão esquerdo mouse"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="botoes"]
+offset_left = 128.0
+offset_top = 589.0
+offset_right = 601.0
+offset_bottom = 618.0
+theme_override_fonts/font = ExtResource("1_f76k3")
+theme_override_font_sizes/font_size = 24
+text = "Esc"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -41.0
+offset_top = 312.0
+offset_right = 197.0
+offset_bottom = 465.0
+texture = ExtResource("6_tjmd0")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -49.0
+offset_top = 238.0
+offset_right = 189.0
+offset_bottom = 391.0
+texture = ExtResource("7_q0w88")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -48.0
+offset_top = 162.0
+offset_right = 190.0
+offset_bottom = 315.0
+texture = ExtResource("8_ygx4r")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -37.0
+offset_top = 102.0
+offset_right = 201.0
+offset_bottom = 255.0
+texture = ExtResource("9_bufr6")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+z_index = 10
+layout_mode = 0
+offset_left = -19.0
+offset_top = 307.0
+offset_right = 177.0
+offset_bottom = 587.0
+texture = ExtResource("10_qnrj0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 453.0
+offset_right = 141.0
+offset_bottom = 553.0
+texture = ExtResource("11_ygx4r")
+region_rect = Rect2(16, 16, 32, 24)
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -14.0
+offset_top = 466.0
+offset_right = 182.0
+offset_bottom = 746.0
+texture = ExtResource("12_bufr6")
 
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

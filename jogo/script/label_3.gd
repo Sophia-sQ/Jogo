@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 	pass
 		
 
-
+##faz texto piscar
 func _on_timer_timeout() -> void:
 	if liga == 0 and repete<5:
 		liga = 1

@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == pluto_nave:
+		##player toma dado e asteroide explode
 		Gerenciador.kill.emit()
 		print("Sinal 'kill' emitido para o gerenciador!")
 		ativo=true
