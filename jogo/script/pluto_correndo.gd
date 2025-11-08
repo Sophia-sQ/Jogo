@@ -11,6 +11,7 @@ const JUMP_VELOCITY = -400.0
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
+	Geral._tocar_musica(0)
 	Transição.fim_transição.connect(Callable(self, "_on_fim_transição"))
 	Gerenciador.Sp.connect(Callable(self, "_on_sinal_pluto"))
 
@@ -38,11 +39,11 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("space") and is_on_floor():
 			audio_stream_player_2d.play()
 			velocity.y = JUMP_VELOCITY
-	
+			
 	if is_on_floor():
 		animated_sprite_2d.play("default")
 	else:
-		animated_sprite_2d.play("parado")
+		animated_sprite_2d.play("pulo")
 	
 	move_and_slide()
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c205sd8kbupt6"]
+[gd_scene load_steps=9 format=3 uid="uid://c205sd8kbupt6"]
 
 [ext_resource type="Script" uid="uid://chiywkw7icyrx" path="res://script/baú_item.gd" id="1_tnynq"]
 [ext_resource type="Texture2D" uid="uid://jdwk5bxmm1kt" path="res://assets/sprites/Outros/SprAnimaBau.png" id="2_tnynq"]
+[ext_resource type="AudioStream" uid="uid://f3374r7qcstn" path="res://assets/sound/SFX/key-twist-in-lock-47832.mp3" id="3_7uv1r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_syfyy"]
 atlas = ExtResource("2_tnynq")
@@ -52,6 +53,11 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tnynq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7uv1r")
+volume_db = 24.0
+bus = &"New Bus"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

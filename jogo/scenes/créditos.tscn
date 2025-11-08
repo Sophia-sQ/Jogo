@@ -148,7 +148,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_4dirm")
 theme_override_font_sizes/font_size = 24
 text = "Ana Luiza da Silva Pires
-rafaella de Souza Sant'anna"
+Rafaella de Souza Sant'anna"
 horizontal_alignment = 1
 vertical_alignment = 1
 

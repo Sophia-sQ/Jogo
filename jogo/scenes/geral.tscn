@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf8esakis8ch5"]
+
+[ext_resource type="AudioStream" uid="uid://bfhtmjkcgskbq" path="res://assets/sound/music/Geral.mp3" id="1_ypqra"]
+[ext_resource type="Script" uid="uid://c7diwbpfflphb" path="res://script/music.gd" id="2_dotpb"]
+
+[node name="geral" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ypqra")
+autoplay = true
+stream_paused = true
+bus = &"Music"
+script = ExtResource("2_dotpb")

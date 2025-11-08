@@ -20,6 +20,7 @@ Gerenciador="*res://script/gerenciador.gd"
 Dialogos="*res://script/dialogos.gd"
 "Transição"="*res://scenes/transição.tscn"
 Add_item="*res://script/add_item.gd"
+Geral="*res://scenes/geral.tscn"
 
 [display]
 

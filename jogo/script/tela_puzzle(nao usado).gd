@@ -1,5 +1,6 @@
 extends Control
 
+@onready var pluto_em_pe: CharacterBody2D = $"../../../../pluto_em_pe"
 @onready var pergunta: Label = $Sprite2D/pergunta
 @onready var a: Button = $Sprite2D/a
 @onready var b: Button = $Sprite2D/b
@@ -13,11 +14,10 @@ func _ready() -> void:
 	bau=get_parent()
 	
 func _process(delta: float) -> void:
-	#if get_tree().paused==true:
-		#visible=true
 	pass
 
 func _chamado(bau: int):
+	pluto_em_pe.anda=false
 	visible=true
 	_enabled()
 	if bau==1:
@@ -44,7 +44,8 @@ func _texto(questao: String, resA:String, resB: String, resC: String):
 	
 func _on_fechar_pressed() -> void:
 	visible=false
-	get_tree().paused=false
+	#get_tree().paused=false
+	pluto_em_pe.anda=true
 	
 func _on_a_pressed() -> void:
 	if resposta=="a":
@@ -77,7 +78,8 @@ func _correto():
 	fechar.disabled=true
 	await get_tree().create_timer(3.5).timeout
 	queue_free()
-	get_tree().paused=false
+	pluto_em_pe.anda=true
+	#get_tree().paused=false
 	certo.emit()
 
 func _disabled():

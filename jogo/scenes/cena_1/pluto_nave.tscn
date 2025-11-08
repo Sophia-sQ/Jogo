@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dcfdtg3mputcn" path="res://assets/sprites/Alien/Alien_plutton_nav_dano.png" id="2_c8ey1"]
 [ext_resource type="Texture2D" uid="uid://bljoos6l8xnyd" path="res://assets/sprites/Alien/plutton_nav_quebrada.png" id="4_tffs7"]
 [ext_resource type="Texture2D" uid="uid://b7xs76ckx8y6v" path="res://assets/sprites/Alien/plutton_nav_quebrando.png" id="5_7ljt8"]
-[ext_resource type="AudioStream" uid="uid://pxmshnt4lnov" path="res://assets/sound/cair.mp3" id="6_426xl"]
+[ext_resource type="AudioStream" uid="uid://pxmshnt4lnov" path="res://assets/sound/SFX/cair.mp3" id="6_426xl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tffs7"]
 atlas = ExtResource("2_c8ey1")
@@ -235,6 +235,6 @@ stream = ExtResource("6_426xl")
 bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

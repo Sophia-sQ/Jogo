@@ -3,6 +3,9 @@ extends Camera2D
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
 var change := false
 
+func _ready() -> void:
+	Geral._tocar_musica(2)
+
 func _process(delta: float) -> void:
 	if zoom.x < 6:
 		zoom += Vector2(0.02, 0.02)

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 var entrada:=true
-var anda=false
+var anda=true
 var saida=false
 const SPEED = 100.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 			position.y-=65*delta
 		if position.x<=-1870:
 			Transição._transição()
-	elif entrada==false and saida==false:
+	elif entrada==false and saida==false and anda==true:
 		var movex := 0
 		var movey := 0
 		if Input.is_action_pressed("left"):

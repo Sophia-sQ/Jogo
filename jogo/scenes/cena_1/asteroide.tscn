@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dirvh1370y6hq" path="res://script/asteroide.gd" id="1_di66w"]
 [ext_resource type="Texture2D" uid="uid://bxb6tbx5tifoc" path="res://assets/sprites/Outros/Asteroide.png" id="2_1y40d"]
 [ext_resource type="Texture2D" uid="uid://ddvwsb0np332a" path="res://assets/sprites/Outros/explosao.png" id="3_16vfh"]
-[ext_resource type="AudioStream" uid="uid://snynw8ixjqbj" path="res://assets/sound/explosion.wav" id="5_16vfh"]
+[ext_resource type="AudioStream" uid="uid://snynw8ixjqbj" path="res://assets/sound/SFX/explosion.wav" id="5_16vfh"]
 [ext_resource type="PackedScene" uid="uid://5o3sjiombg67" path="res://scenes/cena_1/killzone_asteroide.tscn" id="5_m81rc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btpp4"]

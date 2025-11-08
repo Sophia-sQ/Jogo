@@ -7,7 +7,8 @@ const SPEED = 100.0
 
 func _ready() -> void:
 	animated_sprite.play("anda_costas")
-
+	Geral._tocar_musica(0)
+	
 func _physics_process(delta: float) -> void:
 	if entrada==true:
 		position.y-=65*delta

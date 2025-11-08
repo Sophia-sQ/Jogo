@@ -10,6 +10,7 @@ var area := 1
 @onready var animation: AnimatedSprite2D = $pluto_em_pe/AnimatedSprite2D
 
 func _ready() -> void:
+	Geral._tocar_musica(1)
 	Gerenciador.passou_porta.connect(Callable(self, "_on_passou_porta"))
 	Gerenciador.add_item.emit("crachá") ##da o cracha pro player
 	##reseta variaveis que causavam problemas
@@ -36,8 +37,10 @@ func _process(delta: float) -> void:
 		colisao_porta.disabled=true
 	elif area==2 and Dialogos.fala<3:
 		colisao_porta.disabled=true
+		area_porta.disabled=true
 	else:
 		colisao_porta.disabled=false
+		area_porta.disabled=false
 	##termino da fase
 	if area==2 and Dialogos.fala<4:
 		permitido=false

@@ -7,6 +7,7 @@ const FINAL_Y = 504
 var mov= true
 
 func _ready():
+	Geral._tocar_musica(0)
 	visible=true
 	play()
 

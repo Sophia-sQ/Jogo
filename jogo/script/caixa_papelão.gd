@@ -5,7 +5,6 @@ extends Area2D
 @onready var Atr: Timer = $"../Timer_ATRITO"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if body == g: ##caso guarda ou player toquem manda sinal de lentidão e desaparece
 		Gerenciador.Sg.emit()

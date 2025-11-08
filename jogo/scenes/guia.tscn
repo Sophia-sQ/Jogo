@@ -24,7 +24,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(51.5044, 26.7717)
-color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+color = Color(0.0784314, 0.0784314, 0.117647, 1)
 
 [node name="título" type="Label" parent="."]
 layout_mode = 0

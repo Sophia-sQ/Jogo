@@ -7,6 +7,7 @@ var corpo=false
 @onready var tela_puzzle: Control = get_node("Tela_puzzle")
 @onready var animated_sprite: AnimatedSprite2D = $Sprite2D
 @onready var label: Label = get_node("Label")
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 func _ready() -> void:
@@ -29,12 +30,13 @@ func _unhandled_input(event: InputEvent) -> void: ##alternativa caso espaço fal
 	if event.is_action_pressed("space") and corpo==true and is_instance_valid(tela_puzzle)==true:
 		print("ta aceitando")
 		tela_puzzle._chamado(num_bau) ##começa puzzle
-		get_tree().paused=true		
+		#get_tree().paused=true		
 
 
 func _on_tela_puzzle_certo() -> void:
 	print("bau aberto")
 	animated_sprite.play("destrava")
+	audio_stream_player_2d.play()
 	Gerenciador.add_item.emit(item) ##item para o jogador
 	label.visible=true ##mostra qual item
 	await get_tree().create_timer(3).timeout

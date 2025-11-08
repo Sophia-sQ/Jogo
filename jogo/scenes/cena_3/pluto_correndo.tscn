@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbuiqip58yoc4"]
+[gd_scene load_steps=16 format=3 uid="uid://cbuiqip58yoc4"]
 
 [ext_resource type="Texture2D" uid="uid://cfa1vhaupthuy" path="res://assets/sprites/Alien/andando/Plumbum_esq_and.png" id="1_uan34"]
 [ext_resource type="Script" uid="uid://cagvbwulra2e" path="res://script/pluto_correndo.gd" id="1_x63av"]
 [ext_resource type="Texture2D" uid="uid://dimu0pnelvmlt" path="res://assets/sprites/Alien/parado/Plumbum_dir_par.png" id="3_r375e"]
+[ext_resource type="Texture2D" uid="uid://dq5o668usigwh" path="res://assets/sprites/Alien/andando/PlumbumPulando.png" id="4_2tcus"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x63av"]
 atlas = ExtResource("1_uan34")
@@ -15,6 +16,34 @@ region = Rect2(64, 0, 64, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fl47n"]
 atlas = ExtResource("3_r375e")
 region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blaiq"]
+atlas = ExtResource("4_2tcus")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fise8"]
+atlas = ExtResource("4_2tcus")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tepx"]
+atlas = ExtResource("4_2tcus")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4itjn"]
+atlas = ExtResource("4_2tcus")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kspn7"]
+atlas = ExtResource("4_2tcus")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb4ee"]
+atlas = ExtResource("4_2tcus")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avera"]
+atlas = ExtResource("4_2tcus")
+region = Rect2(0, 128, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fl47n"]
 animations = [{
@@ -36,6 +65,32 @@ animations = [{
 "loop": true,
 "name": &"parado",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blaiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fise8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tepx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4itjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kspn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb4ee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avera")
+}],
+"loop": false,
+"name": &"pulo",
+"speed": 12.0
 }]
 
 [node name="pluto_correndo" type="CharacterBody2D"]
@@ -43,4 +98,7 @@ script = ExtResource("1_x63av")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fl47n")
+animation = &"pulo"
 autoplay = "default"
+frame = 6
+frame_progress = 1.0
